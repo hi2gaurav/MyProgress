@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fcfaf7">
+    <meta name="description" content="Momentum is a calm daily home for a community that moves forward together.">
+    <title>Momentum — make today count</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="grain"></div>
+<header class="topbar">
+    <a href="#today" class="brand" aria-label="Momentum home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span>momentum</span>
+    </a>
+    <nav aria-label="Primary navigation">
+        <a class="active" href="#today">Today</a>
+        <a href="#resources">Resources</a>
+        <a href="#chat">Community</a>
+    </nav>
+    <button class="profile" id="profileButton" type="button" aria-label="Choose your display name">
+        <span class="profile-dot"></span>
+        <span id="profileLabel">Join in</span>
+    </button>
+</header>
+
+<main>
+    <section class="hero" id="today" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+            <p class="eyebrow"><span></span><span id="dateLabel">Loading today...</span></p>
+            <h1 id="hero-title">Make today<br><em>count.</em></h1>
+            <p class="hero-description" id="focusLine">A shared little push can change the shape of a whole day.</p>
+            <div class="presence-line">
+                <div class="avatar-stack" aria-hidden="true">
+                    <span class="avatar avatar-1">A</span><span class="avatar avatar-2">R</span><span class="avatar avatar-3">S</span><span class="avatar avatar-4">K</span>
+                </div>
+                <span><strong id="onlineCount">—</strong> people are building right now</span>
+            </div>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+            <div class="sun-orb"></div>
+            <div class="arch arch-back"></div>
+            <div class="arch arch-front"></div>
+            <div class="spark spark-one">✦</div><div class="spark spark-two">✦</div>
+            <p class="art-note">one day at a time</p>
+        </div>
+    </section>
+
+    <section class="progress-strip reveal" aria-label="Community progress">
+        <div><span class="metric" id="completedCount">—</span><span class="metric-label">members showed up today</span></div>
+        <div class="progress-track"><span id="progressFill"></span></div>
+        <span class="progress-caption">keep the chain going <b>→</b></span>
+    </section>
+
+    <section class="content-grid">
+        <div class="tasks-panel reveal">
+            <div class="section-heading"><div><p class="eyebrow">YOUR PATH</p><h2>Three moves.<br>One good day.</h2></div><span class="today-badge">TODAY</span></div>
+            <div class="tasks" id="taskList" aria-live="polite"></div>
+        </div>
+
+        <aside class="side-panel">
+            <section class="resources reveal" id="resources">
+                <div class="mini-heading"><div><p class="eyebrow">KEEP HANDY</p><h2>Important links</h2></div><span class="arrow">↗</span></div>
+                <div class="resource-list" id="resourceList"></div>
+            </section>
+
+            <section class="quote-card reveal">
+                <span class="quote-mark">“</span>
+                <p>We become what we repeatedly do—especially when someone is beside us.</p>
+                <span class="quote-source">— THE MOMENTUM COMMUNITY</span>
+            </section>
+        </aside>
+    </section>
+
+    <section class="community-section" id="chat">
+        <div class="community-intro reveal">
+            <p class="eyebrow">LIVE ROOM <span class="live-pill"><i></i> LIVE</span></p>
+            <h2>We’re in this<br><em>together.</em></h2>
+            <p>A small note, a big win, a question you’re carrying—bring it into the room.</p>
+            <div class="member-count"><span class="pulse"></span><strong id="memberCount">200</strong> people in the circle</div>
+        </div>
+        <div class="chat-card reveal">
+            <div class="chat-header"><div class="chat-status"><span class="pulse"></span><span>Community room</span></div><span class="connection" id="connectionStatus">Connecting...</span></div>
+            <div class="messages" id="messages" role="log" aria-live="polite">
+                <div class="message message-system"><span>Welcome to the room. Be generous, be real.</span></div>
+                <div class="message"><span class="message-avatar purple">M</span><div><div class="message-meta"><b>Maya</b><time>09:12</time></div><p>Finished my first focus sprint. It felt easier knowing you all were here. 🌞</p></div></div>
+                <div class="message"><span class="message-avatar green">J</span><div><div class="message-meta"><b>Jai</b><time>09:18</time></div><p>That’s the energy! Sharing my tiny win after this next block.</p></div></div>
+            </div>
+            <form class="chat-composer" id="chatForm">
+                <label class="sr-only" for="chatInput">Write a message</label>
+                <input id="chatInput" type="text" maxlength="500" autocomplete="off" placeholder="Share a thought with the community…" disabled>
+                <button id="sendButton" type="submit" disabled aria-label="Send message">↑</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer><span>© 2026 MOMENTUM</span><span>Made for people in motion <b>✦</b></span></footer>
+
+<dialog id="nameDialog" aria-labelledby="dialog-title">
+    <form method="dialog" id="nameForm">
+        <button class="close-dialog" value="cancel" aria-label="Close">×</button>
+        <p class="eyebrow">STEP INTO THE ROOM</p>
+        <h2 id="dialog-title">What should we call you?</h2>
+        <p>Your name is only used to make the live chat feel human.</p>
+        <label class="sr-only" for="nameInput">Your name</label>
+        <input id="nameInput" maxlength="40" autocomplete="name" placeholder="Your first name">
+        <button class="join-button" value="default" type="submit">Join the conversation <span>→</span></button>
+    </form>
+</dialog>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,2 +1,0 @@
-# MyProgress
-Progress Tracker
